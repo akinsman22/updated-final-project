@@ -19,7 +19,8 @@ export const registerUser: RequestHandler = async (req, res, next) => {
         let created = await User.create(newUser);
         res.status(200).json({
             email: created.email,
-            userId: created.userId
+            userId: created.userId,
+            token: hashPass
         });
     }
     else {
@@ -48,6 +49,8 @@ export const signUser: RequestHandler = async (req, res, next) => {
 }
 
 export const getUser: RequestHandler = async (req, res, next) => {
+    console.log("this got called")
+    console.log(req)
     let user: User | null = await verifiedUser(req);
 
     if (user) {

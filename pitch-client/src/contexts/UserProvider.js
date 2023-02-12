@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UserContext from "./UserContext";
 
 export const UserProvider = (props) => {
@@ -18,14 +18,15 @@ export const UserProvider = (props) => {
     }, []);
     
     function allUsers() {
-        return axios.get(baseURL).then(response => setUsersAll(response.data));
+        return axios.get(baseURL).then(response => {
+            console.log(response.data)
+            setUsersAll(response.data)
+        });
     }
     // use to filter users
 
-    function generateUser(email, password) {
-        let user = { email, password };
-
-        return axios.post(baseURL, user)
+    function generateUser(userData) {
+        return axios.post(baseURL, userData)
             .then(response => {
                 return new Promise(resolve => resolve(response.data));
             }
@@ -43,10 +44,10 @@ export const UserProvider = (props) => {
             );
     }
 
-    function getUser(id) {
-        let user = { email, password }
-        return axios.get(baseURL + id, user)
+    function getUser(token) {
+        return axios.get(`${baseURL}/signin`, token)
             .then(response => {
+                console.log(response)
                 localStorage.setItem('pitchToken', response.data.token)
                 setLoginedUser(response.data)
                 return new Promise(resolve => resolve(response.data));
@@ -54,7 +55,7 @@ export const UserProvider = (props) => {
     }
    
     function signOutUser() {
-        localStorage.removeItem(token)
+        localStorage.removeItem("token")
         setLoginedUser({})
         console.log("User logged out")
     }

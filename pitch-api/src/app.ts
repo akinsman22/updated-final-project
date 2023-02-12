@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: true}));
 // incoming requests
 const cors = require('cors');
 const corsOptions = {
-    origin: [ 'http://localhost:4200', 'http://localhost:3001' ]
+    origin: [ 'http://localhost:4200', 'http://localhost:3003' ]
 };
 app.use(cors(corsOptions));
 

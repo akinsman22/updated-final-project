@@ -16,8 +16,9 @@ const EditPitch = () => {
             const vPitch = await getPitchById(params.id)
             setNewPitch( vPitch )
         }
+        console.log("hi")
         getSinglePitch();
-    }, [])
+    }, [getPitchById, params])
 
     function handleChange(e) {
         setNewPitch((preValue) => {

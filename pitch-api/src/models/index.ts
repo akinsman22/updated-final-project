@@ -5,7 +5,7 @@ import { AssociateUserPitch, PitchFactory } from "./pitch";
 
 const dbName = 'pitchDB';
 const username = 'root';
-const password = 'Password1!';
+const password = 'password1';
 
 const sequelize = new Sequelize(dbName, username, password, {
     host: '127.0.01',

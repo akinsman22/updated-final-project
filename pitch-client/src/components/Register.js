@@ -13,7 +13,7 @@ const Register = () => {
         age: 0
     });
 
-    let { generateUser } = useContext(UserContext);
+    let { generateUser, signInUser } = useContext(UserContext);
     let navigate = useNavigate();
 
     function handleChange(e) {
@@ -24,8 +24,12 @@ const Register = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        generateUser(newUser).then(() => {
-            navigate('/users/:id')
+        generateUser(newUser).then((response) => {
+            // navigate('/users/' + response.userId)
+            console.log(response)
+            signInUser(newUser.email, newUser.password).then(res => {
+                console.log(res)
+            })
         }).catch(error => {
             console.log(error);
             window.alert('Failed in creating user');

@@ -5,8 +5,7 @@ import React, { useContext } from "react";
 
 
 function NavBar() {
-
-  const { loginedUser, signOutUser } = useContext(UserContext);
+  // const { loginedUser, /* signOutUser */ } = useContext(UserContext);
 
   return (
     <>
@@ -20,7 +19,7 @@ function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav ">
 
             <Nav className='justify-content-end'>
-              {!loginedUser ? (
+              {/* {!loginedUser ? (
 
                 <div>
                   <Link className="nav-link" to="/signin">Login</Link>
@@ -44,7 +43,7 @@ function NavBar() {
 
                 </div>
 
-              }
+              } */}
             </Nav>
 
           </Navbar.Collapse>
@@ -59,7 +58,7 @@ function NavBar() {
         <center className="footer">
           <div>
             <a href='https://github.com/akinsman22' target="blank">
-              <img style={{ width: "50px" }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU' />
+              <img alt="github" style={{ width: "50px" }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU' />
             </a>
           </div>
         </center>

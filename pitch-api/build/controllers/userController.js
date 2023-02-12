@@ -17,7 +17,8 @@ const registerUser = async (req, res, next) => {
         let created = await user_1.User.create(newUser);
         res.status(200).json({
             email: created.email,
-            userId: created.userId
+            userId: created.userId,
+            token: hashPass
         });
     }
     else {
@@ -45,6 +46,8 @@ const signUser = async (req, res, next) => {
 };
 exports.signUser = signUser;
 const getUser = async (req, res, next) => {
+    console.log("this got called");
+    console.log(req);
     let user = await (0, auth_1.verifiedUser)(req);
     if (user) {
         let { email } = user;

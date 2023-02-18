@@ -1,7 +1,6 @@
 import { Container, Nav, Navbar, NavDropdown, Stack } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
-import UserContext from "../contexts/UserContext";
-import React, { useContext } from "react";
+import { UserContext } from "../contexts/UserProvider";
 
 
 function NavBar() {

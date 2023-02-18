@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Card, Container, Stack, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-import PitchContext from '../contexts/PitchContext';
-import UserContext from '../contexts/UserContext';
+import { PitchContext } from '../contexts/PitchProvider';
+import { UserContext } from '../contexts/UserProvider';
 
 const PitchList = () => {
     const { deletePitch, /* getPitchById, allPitches */ } = useContext(PitchContext);

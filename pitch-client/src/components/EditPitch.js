@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import PitchContext from '../contexts/PitchContext';
+import { PitchContext } from '../contexts/PitchProvider';
 
 const EditPitch = () => {
 

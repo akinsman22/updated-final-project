@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import PitchContext from "./PitchContext";
+import React, { useEffect, useState } from "react";
+
+export const PitchContext = React.createContext();
 
 export const PitchProvider = (props) => {
     const [pitch, setPitch] = useState([]);

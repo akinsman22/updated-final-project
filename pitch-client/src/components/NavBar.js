@@ -2,7 +2,6 @@ import { Container, Nav, Navbar, NavDropdown, Stack } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import { UserContext } from "../contexts/UserProvider";
 
-
 function NavBar() {
   // const { loginedUser, /* signOutUser */ } = useContext(UserContext);
 
@@ -14,10 +13,8 @@ function NavBar() {
             <h1>Pitch Me An Idea</h1>
           </Navbar.Brand>
 
-
           <Navbar.Collapse id="basic-navbar-nav ">
-
-            <Nav className='justify-content-end'>
+            <Nav className="justify-content-end">
               {/* {!loginedUser ? (
 
                 <div>
@@ -44,7 +41,6 @@ function NavBar() {
 
               } */}
             </Nav>
-
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -53,11 +49,23 @@ function NavBar() {
         <Outlet />
       </Stack>
 
-      <footer style={{ marginTop: "1rem", padding: "1rem", bottom: "0", left: "0", width: "100%" }}>
+      <footer
+        style={{
+          marginTop: "1rem",
+          padding: "1rem",
+          bottom: "0",
+          left: "0",
+          width: "100%",
+        }}
+      >
         <center className="footer">
           <div>
-            <a href='https://github.com/akinsman22' target="blank">
-              <img alt="github" style={{ width: "50px" }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU' />
+            <a href="https://github.com/akinsman22" target="blank">
+              <img
+                alt="github"
+                style={{ width: "50px" }}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU"
+              />
             </a>
           </div>
         </center>

@@ -6,6 +6,7 @@ export const UserContext = React.createContext();
 export const UserProvider = (props) => {
   const [usersAll, setUsersAll] = useState([]);
   const [loginedUser, setLoginedUser] = useState([]);
+  const [ currentUser, setCurrentUser ] = useState({})
   // const [signIn, setSignIn] = useState([])
 
   const baseURL = "http://localhost:3000/api/users/";
@@ -15,6 +16,8 @@ export const UserProvider = (props) => {
       await allUsers();
     }
     getData();
+
+
   }, []);
 
   function allUsers() {
@@ -27,6 +30,8 @@ export const UserProvider = (props) => {
 
   function generateUser(userData) {
     return axios.post(baseURL, userData).then((response) => {
+      console.log(response)
+      setCurrentUser(response.data)
       return new Promise((resolve) => resolve(response.data));
     });
   }
@@ -71,6 +76,7 @@ export const UserProvider = (props) => {
         loginedUser,
         usersAll,
         signOutUser,
+        currentUser
       }}
     >
       {props.children}

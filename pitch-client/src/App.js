@@ -22,7 +22,7 @@ function App() {
             <Route path="/pitches/edit/:id" element={<EditPitch />} /> */}
           {/* </Route> */}
           <Route path="/pitches" element={<PitchList />} />
-          <Route path="/users/:id" element={<UserProfile />} />
+          <Route path="/user" element={<UserProfile />} />
           <Route path="/register" element={<Register />} />
         </Route>
       </Routes>

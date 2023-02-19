@@ -21,11 +21,11 @@ export const registerUser: RequestHandler = async (req, res, next) => {
     let hashPass = await hashedPass(newUser.password);
     newUser.password = hashPass;
     let created = await User.create(newUser);
-    res.status(200).json({
-      email: created.email,
-      userId: created.userId,
-      token: hashPass,
-    });
+    if ( created.dataValues ) {
+      res.status(200).json(created.dataValues);
+    } 
+
+   
   } else {
     res.status(400).send("Email and password required.");
   }

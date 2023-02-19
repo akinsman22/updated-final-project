@@ -6,11 +6,11 @@ const user_1 = require("./user");
 const pitch_1 = require("./pitch");
 const dbName = "pitchDB";
 const username = "root";
-const password = "Password1!";
+const password = "password1";
 const sequelize = new sequelize_1.Sequelize(dbName, username, password, {
-  host: "127.0.01",
-  port: 3306,
-  dialect: "mysql",
+    host: "127.0.01",
+    port: 3306,
+    dialect: "mysql",
 });
 (0, pitch_1.PitchFactory)(sequelize);
 (0, user_1.UserFactory)(sequelize);

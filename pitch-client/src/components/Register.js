@@ -25,11 +25,7 @@ const Register = () => {
     event.preventDefault();
     generateUser(newUser)
       .then((response) => {
-        // navigate('/users/' + response.userId)
-        console.log(response);
-        signInUser(newUser.email, newUser.password).then((res) => {
-          console.log(res);
-        });
+        navigate("/user")
       })
       .catch((error) => {
         console.log(error);
